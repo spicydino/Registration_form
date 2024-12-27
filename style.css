@@ -1,0 +1,142 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    width: 100%; 
+    height: 100%; 
+}
+
+.container {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: floralwhite;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+}
+
+header {
+    color: #fdfdfd;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+.input {
+    height: 45px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    color: #fdfdfd;
+    padding: 0 15px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+}
+
+button[type="submit"] {
+    height: 45px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    background: #007BFF; /* Button color */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease, transform 0.2s ease, opacity 0.3s ease; /* Added opacity transition */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Normal shadow */
+    opacity: 0.7; /* Initial reduced opacity */
+}
+
+button[type="submit"]:hover {
+    background: #0056b3; /* Darker shade on hover */
+    transform: translateY(-5px); /* Elevate button */
+    box-shadow: 0 6px 12px rgba(83, 65, 203, 0.792); /* More pronounced shadow */
+    opacity: 1; /* Full opacity on hover */
+}
+
+select {
+    height: 35px; 
+    width: 70%; 
+    border: none;
+    outline: none;
+    border-radius: 20px; 
+    color: #fdfdfd; 
+    padding: 0 10px; 
+    background: rgba(255, 255, 255, 0.1); 
+    margin-bottom: 15px;
+    font-size: 14px; 
+    appearance: none; 
+    cursor: pointer;
+    transition: 0.3s ease; 
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); 
+}
+
+select:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+select:focus {
+    outline: none;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); 
+}
+
+option {
+    color: black; 
+    background: white; 
+}
+
+/* New Styles for "Go back to the form" link as a button */
+a {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    background: #28a745; /* Button color (green) */
+    color: white;
+    text-decoration: none;
+    border-radius: 30px; 
+    margin-top: 20px;
+    text-align: center;
+    transition: 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Normal shadow */
+    opacity: 0.8;
+}
+
+a:hover {
+    background: #218838; /* Darker shade of green on hover */
+    transform: translateY(-5px); /* Elevate the button */
+    box-shadow: 0 6px 12px rgba(83, 65, 203, 0.792); /* More pronounced shadow */
+    opacity: 1; /* Full opacity on hover */
+}
+
+a:active {
+    transform: scale(0.98); /* Slight shrinking on click */
+}

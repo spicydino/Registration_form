@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Registration</title>
+</head>
+<body>
+    <div class="box">
+        <div class="container">
+            <div class="top-header">
+                <header><b>Registration Form</b></header><br><br>
+            </div>
+
+            <!-- Form for submitting data -->   
+            <form id="registration-form">
+                <h3>Enter your name</h3>
+                <div class="input-field">
+                    <input type="text" class="input" name="name" placeholder="Your full name" required>
+                </div>
+
+                <h3>Roll no</h3>
+                <div class="input-field">
+                    <input type="number" class="input" name="roll_no" placeholder="eg.1238028" required>
+                </div>
+
+                <h3>Choose gender</h3>
+                <div class="input-field">
+                    <input type="radio" id="male" name="gender" value="Male" required>
+                    <label for="male">Male</label><br>
+                    <input type="radio" id="female" name="gender" value="Female" required>
+                    <label for="female">Female</label><br>
+                </div><br>
+
+                <h3>Choose type of Internship</h3>
+                <div class="input-field">
+                    <select name="internship_type" id="Internship" required>
+                        <option value="" disabled selected>Choose type</option>
+                        <option value="inhouse">In House</option>
+                        <option value="outhouse">Out house</option>
+                        <option value="nos">No-offered</option>
+                    </select>
+                </div><br>
+
+                <h3>Company name</h3>
+                <div class="input-field">
+                    <input type="text" class="input" name="company_name" placeholder="Internship company" required>
+                </div><br>
+
+                <!-- Submit button -->
+                <div>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div><br>
+    </div>
+
+    <script>
+        document.getElementById("registration-form").addEventListener("submit", async (event) => {
+    event.preventDefault(); // Prevent the form from refreshing the page
+
+    const formData = new FormData(event.target);
+    const formObject = Object.fromEntries(formData.entries());
+
+    try {
+        const response = await fetch("http://localhost:8000/user", {
+            method: "POST",  // Correctly placed inside the options object
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formObject),
+        });
+
+        if (response.ok) {
+            alert("Registration successful!");
+        } else {
+            alert("Failed to register. Please try again.");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        alert("An error occurred while submitting the form.");
+    }
+});
+
+    </script>
+</body>
+</html>
